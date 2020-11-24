@@ -1,9 +1,9 @@
 {
   "author": "Swisschain",
-  "classifications": [ "SwisschainService" ],
-  "name": "SwisschainService",
-  "identity": "SwisschainService",
-  "shortName": "swissservice",
+  "classifications": [ "AntaresService" ],
+  "name": "AntaresService",
+  "identity": "AntaresService",
+  "shortName": "antares",
   "preferNameDirectory": "true",
   "tags": {
     "language": "C#"

@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    description: ServiceName
+    description: ServiceName-ManagerApi
   labels:
-    app: swisschain-service-name
+    app: swisschain-service-name-managerapi
     environment: Development
     tier: Service
-  name: swisschain-service-name
+  name: swisschain-service-name-managerapi
   namespace: swisschain-product-name
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: swisschain-service-name
+      app: swisschain-service-name-managerapi
   template:
     metadata:
       labels:
-        app: swisschain-service-name
-      name: swisschain-service-name
+        app: swisschain-service-name-managerapi
+      name: swisschain-service-name-managerapi
     spec:
       containers:
-      - name: swisschain-service-name
-        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name:dev
+      - name: swisschain-service-name-managerapi
+        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name-managerapi:dev
         imagePullPolicy: Always
         lifecycle:
           postStart:

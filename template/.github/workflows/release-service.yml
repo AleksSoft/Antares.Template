@@ -19,21 +19,38 @@ jobs:
       run: dotnet build --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/service-}
     - name: Test
       run: dotnet test --no-build --configuration Release
-    - name: Publish API
-      run: dotnet publish ./src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release
+
+    - name: Publish Manager API
+      run: dotnet publish ./src/ServiceName.ManagerApi/ServiceName.ManagerApi.csproj --output ./publish-api --configuration Release
+    - name: Publish Datareader API
+      run: dotnet publish ./src/ServiceName.DataReaderApi/ServiceName.DataReaderApi.csproj --output ./publish-datareader-api --configuration Release
     - name: Publish worker
       run: dotnet publish ./src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release
-    - name: Check API dir
+
+    - name: Check Manager API dir
       run: ls ./publish-api
+    - name: Check DataReader API dir
+      run: ls ./publish-datareader-api
     - name: Check worker dir
       run: ls ./publish-worker
-    - name: Publish API to Registry
+
+    - name: Publish Manager API to Registry
       uses: swisschain/Publish-Docker-Github-Action@master
       with:
-        name: swisschains/swisschain-product-name-swisschain-service-name
+        name: swisschains/swisschain-product-name-swisschain-service-name-managerapi
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         workdir: ./publish-api
+        # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
+        tag_names: true  
+        tag_name_skip: service-    
+    - name: Publish DataReader API to Registry
+      uses: swisschain/Publish-Docker-Github-Action@master
+      with:
+        name: swisschains/swisschain-product-name-swisschain-service-name-datareaderapi
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        workdir: ./publish-datareader-api
         # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
         tag_names: true  
         tag_name_skip: service-    

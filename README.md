@@ -7,18 +7,18 @@
 dotnet new --install ${path}
 `
 
-where ${path} is the **full** path to the clonned directory (where the folder .template.config placed) **without trailing slash** (e.g. `D:\SwissChainRoot\Service.Template\template`)
+where ${path} is the **full** path to the clonned directory (where the folder .template.config placed) **without trailing slash** (e.g. `D:\SwissChainRoot\Antares.Template\template`)
 
 ### Create
 
 `
-dotnet new swissservice -n {ServiceName} -o {ServiceDirectory} -snk {service-name-kebab-case} -pnk {proudct-name-kebab-case} -pnc {ProductNameCamelCase}
+dotnet new antares -n {ServiceName} -o {ServiceDirectory} -snk {service-name-kebab-case} -pnk {proudct-name-kebab-case} -pnc {ProductNameCamelCase}
 `
 
 e.g.
 
 `
-dotnet new swissservice -n Wallet -o Service.Sirius.Wallet -snk wallet -pnk sirius -pnc Sirius
+dotnet new antares -n Wallet -o Antares.Wallet -snk wallet -pnk antares -pnc Antares
 `
 # Features added to the template
 

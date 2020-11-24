@@ -17,7 +17,7 @@ namespace ServiceName.ManagerApi
 
         public static void Main(string[] args)
         {
-            Console.Title = "SwisschainProductName ServiceName";
+            Console.Title = "SwisschainProductName ServiceName ManagerApi";
 
             var remoteSettingsConfig = ApplicationEnvironment.Config.Get<RemoteSettingsConfig>();
 

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: swisschain-service-name-managerapi
+    environment: Development
+  name: swisschain-service-name-managerapi
+  namespace: swisschain-product-name
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 5000
+  - name: grpc
+    port: 80
+    protocol: TCP
+    targetPort: 5001
+  selector:
+    app: swisschain-service-name-managerapi
+  sessionAffinity: None
+  type: ClusterIP
