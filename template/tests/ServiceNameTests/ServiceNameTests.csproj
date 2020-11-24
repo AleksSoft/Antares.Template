@@ -27,7 +27,7 @@
     <ProjectReference Include="..\..\src\ServiceName.Common\ServiceName.Common.csproj" />
     <ProjectReference Include="..\..\src\ServiceName.MessagingContract\ServiceName.MessagingContract.csproj" />
     <ProjectReference Include="..\..\src\ServiceName.Worker\ServiceName.Worker.csproj" />
-    <ProjectReference Include="..\..\src\ServiceName\ServiceName.ManagerApi.csproj" />
+    <ProjectReference Include="..\..\src\ServiceName.ManagerApi\ServiceName.ManagerApi.csproj" />
   </ItemGroup>
 
 </Project>
