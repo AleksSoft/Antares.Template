@@ -1,0 +1,5 @@
+{
+  "SwisschainProductNameServiceNameSettings": {
+    "Example": "${SwisschainProductName-ServiceName-Example}"
+  }
+}
