@@ -7,6 +7,6 @@
 
     public class SwisschainProductNameServiceNameSettings
     {
-
+        public DbConfig Db { get; set; }
     }
 }
