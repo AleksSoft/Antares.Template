@@ -1,12 +1,15 @@
 ﻿using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ServiceName.Common.Configuration;
 using ServiceName.Common.HostedServices;
 using ServiceName.Common.Persistence;
+using ServiceName.Common.Persistence.DbContexts;
 using ServiceName.Worker.Modules;
+using Swisschain.Extensions.EfCore;
 using Swisschain.Sdk.Server.Common;
 
 namespace ServiceName.Worker
@@ -23,7 +26,14 @@ namespace ServiceName.Worker
 
         protected override void ConfigureServicesExt(IServiceCollection services)
         {
-            base.ConfigureServicesExt(services);
+            services.AddEfCoreDbMigration(c =>
+            {
+                c.UseDbContextFactory(s =>
+                {
+                    var options = s.GetRequiredService<DbContextOptionsBuilder<DatabaseContext>>();
+                    return new DatabaseContext(options.Options);
+                });
+            });
 
             services.AddHttpClient();
             services.AddHostedService<ExampleHost>();

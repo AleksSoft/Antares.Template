@@ -3,13 +3,15 @@ using Swisschain.SwisschainProductName.ServiceName.ApiContract;
 
 namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
 {
-    public class ServiceNameClient : BaseGrpcClient, IServiceNameClient
+    public class ServiceNameWriterClient : BaseGrpcClient, IServiceNameWriterClient
     {
-        public ServiceNameClient(string serverGrpcUrl) : base(serverGrpcUrl)
+        public ServiceNameWriterClient(string serverGrpcUrl) : base(serverGrpcUrl)
         {
             Monitoring = new Monitoring.MonitoringClient(Channel);
+            //ManagerApi = new ManagerApi.ManagerApiClient(Channel);
         }
 
         public Monitoring.MonitoringClient Monitoring { get; }
+        //public ManagerApi.ManagerApiClient ManagerApi { get; set; }
     }
 }

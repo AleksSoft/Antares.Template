@@ -2,7 +2,7 @@
 {
     public class AppConfig
     {
-        public SwisschainProductNameServiceNameSettings SwisschainProductNameServiceNameSettings { get; set; }
+        public SwisschainProductNameServiceNameSettings SwisschainProductNameServiceName { get; set; }
     }
 
     public class SwisschainProductNameServiceNameSettings
