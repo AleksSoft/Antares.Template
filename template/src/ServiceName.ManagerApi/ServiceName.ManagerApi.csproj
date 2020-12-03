@@ -21,6 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swisschain.Extensions.EfCore" Version="1.0.0" />
     <PackageReference Include="Swisschain.Sdk.Server" Version="6.8.2" />
   </ItemGroup>
 

@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <Protobuf Include="isalive.proto" />
+    <Protobuf Include="dataReaderApiService.proto" />
+    <Protobuf Include="managerApiService.proto" />
   </ItemGroup>
 
 </Project>

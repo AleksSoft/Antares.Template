@@ -13,7 +13,7 @@ namespace TestClient
         {
             Console.WriteLine("Press enter to start");
             Console.ReadLine();
-            var client = new ServiceNameClient("http://localhost:5001");
+            var client = new ServiceNameReaderClient("http://localhost:5001");
 
             while (true)
             {

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Swisschain.SwisschainProductName.ServiceName.ApiContract";
+
+package Swisschain.SwisschainProductName.ServiceName;
+
+service DataReaderApi {
+    rpc GetSomething (GetExampleRequest) returns (GetExampleResponse);
+}
+
+message GetExampleRequest {
+    string id = 1;
+}
+
+message GetExampleResponse {
+    string data = 1;
+}
