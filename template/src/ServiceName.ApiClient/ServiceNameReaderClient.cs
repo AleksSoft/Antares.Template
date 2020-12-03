@@ -8,11 +8,10 @@ namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
         public ServiceNameReaderClient(string serverGrpcUrl) : base(serverGrpcUrl)
         {
             Monitoring = new Monitoring.MonitoringClient(Channel);
-            //DataReaderApi = new DataReaderApi.DataReaderApiClient(Channel);
+            DataReaderApi = new DataReaderApi.DataReaderApiClient(Channel);
         }
 
         public Monitoring.MonitoringClient Monitoring { get; }
-        //TODO: use DataReaderApiClient when it will be generated
-        //public DataReaderApi.DataReaderApiClient DataReaderApi { get; set; }
+        public DataReaderApi.DataReaderApiClient DataReaderApi { get; set; }
     }
 }

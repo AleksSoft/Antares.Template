@@ -16,12 +16,9 @@ namespace ServiceName.Worker
 {
     public sealed class Startup : SwisschainStartup<AppConfig>
     {
-        public AppConfig Config { get; }
-
         public Startup(IConfiguration configuration)
             : base(configuration)
         {
-            Config = configuration.Get<AppConfig>();
         }
 
         protected override void ConfigureServicesExt(IServiceCollection services)

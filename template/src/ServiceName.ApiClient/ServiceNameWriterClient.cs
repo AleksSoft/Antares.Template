@@ -8,11 +8,10 @@ namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
         public ServiceNameWriterClient(string serverGrpcUrl) : base(serverGrpcUrl)
         {
             Monitoring = new Monitoring.MonitoringClient(Channel);
-            //ManagerApi = new ManagerApi.ManagerApiClient(Channel);
+            ManagerApi = new ManagerApi.ManagerApiClient(Channel);
         }
 
         public Monitoring.MonitoringClient Monitoring { get; }
-        //TODO: use ManagerApiClient when it will be generated
-        //public ManagerApi.ManagerApiClient ManagerApi { get; set; }
+        public ManagerApi.ManagerApiClient ManagerApi { get; set; }
     }
 }

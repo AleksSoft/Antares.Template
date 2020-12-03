@@ -33,7 +33,7 @@ namespace ServiceName.Common.Persistence.Repositories
             }
         }
 
-        public async Task<ExampleEntity> GetAsync(string id)
+        public async Task<ExampleEntity> GetOrDefaultAsync(string id)
         {
             await using var context = new DatabaseContext(_dbContextOptionsBuilder.Options);
 

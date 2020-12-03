@@ -5,7 +5,6 @@ namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
     public interface IServiceNameReaderClient
     {
         Monitoring.MonitoringClient Monitoring { get; }
-        //TODO: use DataReaderApiClient when it will be generated
-        //DataReaderApi.DataReaderApiClient DataReaderApi { get; }
+        DataReaderApi.DataReaderApiClient DataReaderApi { get; }
     }
 }

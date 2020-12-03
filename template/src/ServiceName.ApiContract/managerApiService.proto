@@ -5,5 +5,13 @@ option csharp_namespace = "Swisschain.SwisschainProductName.ServiceName.ApiContr
 package Swisschain.SwisschainProductName.ServiceName;
 
 service ManagerApi {
+    rpc SetSomething(SetExampleRequest) returns (SetExampleResponse);
+}
 
+message SetExampleRequest {
+    string id = 1;
+}
+
+message SetExampleResponse {
+    string data = 1;
 }
