@@ -12,6 +12,7 @@ namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
         }
 
         public Monitoring.MonitoringClient Monitoring { get; }
+        //TODO: use ManagerApiClient when it will be generated
         //public ManagerApi.ManagerApiClient ManagerApi { get; set; }
     }
 }
